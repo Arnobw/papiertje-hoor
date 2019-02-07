@@ -44,7 +44,7 @@ border-bottom:dashed 1px Chartreuse ;
   
 }
 
-#input, option {
+#input {
     background-color:black;
     height: 80px;
     font-size:1vw;
@@ -60,9 +60,10 @@ border-bottom:dashed 1px Chartreuse ;
 #output {
   
     color:Chartreuse ;
-    font-size: 3vw;
+    font-size: 2.5vw;
     text-align: center;
     padding:20px;
+    height: 100px;
     
 }
 
@@ -75,3 +76,4 @@ border-bottom:dashed 1px Chartreuse ;
     background-size:cover;
     background-repeat: no-repeat;
 }
+
