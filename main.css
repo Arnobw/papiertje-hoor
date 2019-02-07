@@ -1,0 +1,77 @@
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: black;
+}
+
+#container {
+    display:flex;
+    flex-direction: column;
+    width: 80%;
+ 
+    margin:0 auto;
+   
+
+}
+
+
+section {
+    display: flex;
+    flex-direction: row;
+    align-content:center;
+    background-color:black;
+    color:Chartreuse ;
+    width: 100%;
+}
+
+section p {
+   padding: 10px;
+   font-size:2vw;
+margin: 0 auto;
+border-bottom:dashed 1px Chartreuse ;
+
+}
+
+#btn {
+    background-color:black;
+    height: 80px;
+    font-size:1vw;
+    font-family: 'Press Start 2P', cursive;
+    width:50%;
+    margin:0 auto;
+    outline:solid 3px Chartreuse ;
+    color:Chartreuse ;
+    cursor: crosshair;
+  
+}
+
+#input, option {
+    background-color:black;
+    height: 80px;
+    font-size:1vw;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    width:50%;
+    margin:0 auto;
+    outline:solid 3px Chartreuse ;
+    color:Chartreuse ;
+    cursor: crosshair;
+}
+
+#output {
+  
+    color:Chartreuse ;
+    font-size: 3vw;
+    text-align: center;
+    padding:20px;
+    
+}
+
+#foto {
+    outline:solid 3px Chartreuse ;
+    width: 50%;
+    margin:0 auto;
+    height: 380px;
+    background-image:url('0.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+}
