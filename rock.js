@@ -154,7 +154,7 @@ function item(inaam, iinfoPC, iinfoo, ifoto, idesc) {
 
 let tankje = new item ("tank", -5, -5, "tank.jpg", "<TANK BEATS EVERYTHING>");
 let inktvis = new item("inktvis", +10, +10, "inktvis.jpg", "<Inktvis op de parking, uuuhhhhhhh.>");
-let yeeten = new item ("PC uit het raam gooien", -3, 1, "raam.jpg", "<Je yeet gwn die tyfus computer het raam uit.>")
+let yeeten = new item ("PC uit het raam gooien", -3, 1, "raam.jpg", "<Je yeet gewoon die tyfus computer het raam uit.>")
 let computerman = new item("computerman", 1, -3, "computerman.jpg", "<De computer yeet gewoon jezelve het raam uit.>")
 let items = [tankje, inktvis, yeeten, computerman];
 
@@ -171,7 +171,7 @@ let randitem = function () {
             .animate({
                 opacity: 1
             });
-    })
+    });
 
     $('#foto').animate({
         opacity: 0
@@ -180,34 +180,41 @@ let randitem = function () {
             .animate({
                 opacity: 1
             });
-    })
-    computerwin += gekozen.infoPC;
-    $('#pc').text("pc score: " + computerwin);
-    menswin += gekozen.info;
-    $('#mens').text("jouw score: " + menswin ); 
+    });
+    
+   
    
    //score animatie
-    $('#scorepc').animate({
-        opacity: 0
-    }, 50, function () {
-        $(this).text(gekozen.infoPC)
-            .animate({
-                opacity: 1
-            }).animate({
-                opacity: 0
-            })
-    });
 
-    $('#scoreman').animate({
+   
+   computerwin += gekozen.infoPC;
+   $('#pc').text("pc score: " + computerwin);
+   $('#scorepc').stop(true).animate({
         opacity: 0
     }, 50, function () {
-        $(this).text(gekozen.info)
+        $('#scorepc').text(gekozen.infoPC)
             .animate({
                 opacity: 1
             }).animate({
                 opacity: 0
-            })
-    });   
+            });
+    });
+    
+    menswin += gekozen.info;
+    $('#mens').text("jouw score: " + menswin );  
+    $('#scoreman').stop(true).animate({
+        opacity: 0
+    }, 50, function () {
+        $('#scoreman').text(gekozen.info)
+            .animate({
+                opacity: 1
+            }).animate({
+                opacity: 0
+            });
+    });  
+
+    
+
 }
 
 $('#btn').click(function () {

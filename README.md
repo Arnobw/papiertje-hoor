@@ -1,5 +1,2 @@
 # papiertje-hoor
-# papier
-# papier
-# papier
-# papiertje-hoor
+https://arnobw.github.io/papiertje-hoor/

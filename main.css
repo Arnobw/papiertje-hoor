@@ -25,10 +25,11 @@ section {
 
 section p {
    padding: 10px;
+
    font-size:2vw;
 margin: 0 auto;
 border-bottom:dashed 1px Chartreuse ;
-
+text-align:left;
 }
 
 #btn {
@@ -77,3 +78,8 @@ border-bottom:dashed 1px Chartreuse ;
     background-repeat: no-repeat;
 }
 
+#scorepc, #scoreman {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+}
