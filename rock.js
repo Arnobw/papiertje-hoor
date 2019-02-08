@@ -23,6 +23,13 @@ let prefix = "<De computer koos ";
 $('#btn').click(function () {
     b = $('#input').val();
 
+
+    let rr = Math.floor(Math.random() * 10);
+    console.log(rr);
+    if (rr == 5) {
+        randitem();
+    } else {
+
     //winnen, verliezen, gelijkspel....
     let win = function () {
         $('#output').animate({
@@ -140,6 +147,11 @@ $('#btn').click(function () {
     }
 
 
+    }
+
+    
+
+
 });
 
 
@@ -164,6 +176,7 @@ let items = [tankje, inktvis, yeeten, computerman];
 let randitem = function () {
   let rrr = Math.floor(Math.random()* items.length);
   let gekozen = items[rrr];
+  console.log(gekozen)
     $('#output').animate({
         opacity: 0
     }, 50, function () {
@@ -173,16 +186,18 @@ let randitem = function () {
             });
     });
 
-    $('#foto').animate({
+   /* $('#foto').animate({
         opacity: 0
     }, 50, function () {
-        $(this).css("background-image", "url(" + gekozen.foto + ")")
-            .animate({
-                opacity: 1
-            });
-    });
+       .effect( "bounce", {times:3}, 300 );
+    });*/
     
    
+    $('#foto').css("background-image", "url(" + gekozen.foto + ")") .effect( "bounce", {times:3}, 300 );
+    $('#foto').css("opacity", "1");
+    
+   
+  // $('#foto')
    
    //score animatie
 
@@ -217,10 +232,18 @@ let randitem = function () {
 
 }
 
-$('#btn').click(function () {
-    let rr = Math.floor(Math.random() * 10);
-    if (rr == 5) {
-        randitem();
-    }
-})
+// $('#btn').click(function () {
+//     let rr = Math.floor(Math.random() * 10);
+//     console.log(rr);
+//     if (rr == 5) {
+//         randitem();
+//     }
+// })
 
+$(document).ready(function() {
+
+    $("#btn").click(function(){
+       $("#scores").effect( "bounce", {times:3}, 300 );
+    });
+
+ });

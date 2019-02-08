@@ -6,7 +6,7 @@ body {
 #container {
     display:flex;
     flex-direction: column;
-    width: 90%;
+    width: 80%;
  
     margin:0 auto;
    
@@ -17,19 +17,23 @@ body {
 section {
     display: flex;
     flex-direction: row;
-    align-content:center;
+    align-content:space-between;
     background-color:black;
     color:Chartreuse ;
     width: 100%;
+   
+    margin:0 auto;
 }
 
 section p {
    padding: 10px;
-
+    padding-right: 0;
    font-size:2vw;
 margin: 0 auto;
-border-bottom:dashed 1px Chartreuse ;
-text-align:left;
+
+text-align:center;
+width: 40%;
+outline:dashed 1px Chartreuse ;
 }
 
 #btn {
@@ -79,7 +83,18 @@ text-align:left;
 }
 
 #scorepc, #scoreman {
+
+    text-align:left;
+    font-size:2vw;
+    padding: 10px;
+   
+    margin:auto 0;
+    width: 10%;
+}
+
+
+#scores {
     display: flex;
-    flex-direction: row;
-    margin: 0 auto;
+    align-content: space-between;
+    width: 100%;
 }
