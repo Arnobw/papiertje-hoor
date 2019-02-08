@@ -1,3 +1,12 @@
+$(document).ready(function() {
+    $("#input, #btn").hide();
+});
+
+$( document ).keypress(function() {
+    $("#input, #btn").slideDown()
+  });
+
+
 console.log("\\____()< awooooo");
 
 let a = ["schaar", "steen", "papier"];
@@ -148,3 +157,8 @@ $('#btn').click(function () {
         tank();
     }
 })
+
+//regen
+/*let regen = function(){
+
+}*/
