@@ -28,7 +28,7 @@ section {
 section p {
    padding: 10px;
     padding-right: 0;
-   font-size:2vw;
+   font-size:1.5vw;
 margin: 0 auto;
 
 text-align:center;
@@ -85,7 +85,7 @@ outline:dashed 1px Chartreuse ;
 #scorepc, #scoreman {
 
     text-align:left;
-    font-size:2vw;
+    font-size:1.5vw;
     padding: 10px;
    
     margin:auto 0;
@@ -97,4 +97,9 @@ outline:dashed 1px Chartreuse ;
     display: flex;
     align-content: space-between;
     width: 100%;
+}
+
+
+.rood {
+    color:red;
 }

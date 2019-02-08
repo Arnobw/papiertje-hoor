@@ -5,9 +5,49 @@ $(document).ready(function() {
 $( document ).keypress(function() {
     $("#input, #btn").slideDown()
   });
-
-
 console.log("\\____()< awooooo");
+
+
+
+
+
+//geluiden
+var wonnered = new Howl({
+    src: ['audio/win.wav'],
+    volume: 0.5
+});
+
+var wonnered2 = new Howl({
+    src: ['audio/win2.wav'],
+    volume: 0.5
+});
+
+
+var klik = new Howl({
+    src: ['audio/klik.wav'],
+    volume: 0.2
+});
+
+var verlies = new Howl({
+    src: ['audio/verlies.wav'],
+    volume: 0.2
+});
+var verlies2 = new Howl({
+    src: ['audio/verlies2.wav'],
+    volume: 0.4
+});
+
+var draww = new Howl({
+    src: ['audio/draw.wav'],
+    volume: 1
+});
+
+var revent = new Howl({
+    src: ['audio/random.wav'],
+    volume: 1
+});
+
+//
 
 let a = ["schaar", "steen", "papier"];
 let computerwin = 0;
@@ -20,7 +60,11 @@ let prefix = "<De computer koos ";
 
 
 
+
 $('#btn').click(function () {
+
+    klik.play();
+    
     b = $('#input').val();
 
 
@@ -32,6 +76,8 @@ $('#btn').click(function () {
 
     //winnen, verliezen, gelijkspel....
     let win = function () {
+        wonnered.play();
+        wonnered2.play();
         $('#output').animate({
             opacity: 0
         }, 50, function () {
@@ -65,6 +111,7 @@ $('#btn').click(function () {
     }
 
     let draw = function () {
+        draww.play();
         $('#output').animate({
             opacity: 0
         }, 50, function () {
@@ -84,6 +131,8 @@ $('#btn').click(function () {
     }
 
     let loss = function () {
+        verlies.play();
+        verlies2.play();
         $('#output').animate({
             opacity: 0
         }, 50, function () {
@@ -168,12 +217,16 @@ let tankje = new item ("tank", -5, -5, "tank.jpg", "<TANK BEATS EVERYTHING>");
 let inktvis = new item("inktvis", +10, +10, "inktvis.jpg", "<Inktvis op de parking, uuuhhhhhhh.>");
 let yeeten = new item ("PC uit het raam gooien", -3, 1, "raam.jpg", "<Je yeet gewoon die tyfus computer het raam uit.>")
 let computerman = new item("computerman", 1, -3, "computerman.jpg", "<De computer yeet gewoon jezelve het raam uit.>")
-let items = [tankje, inktvis, yeeten, computerman];
+let dio = new item('dio', -20, -20, "roller.jpg", "MUDA MUDA MUDAMUDAMUDAMUDAMUDAMUDA")
+let items = [tankje, inktvis, yeeten, computerman, dio];
 
 
 
 // randomitem
+
 let randitem = function () {
+    $('#output').addClass(".rood");
+    revent.play();
   let rrr = Math.floor(Math.random()* items.length);
   let gekozen = items[rrr];
   console.log(gekozen)
@@ -247,3 +300,8 @@ $(document).ready(function() {
     });
 
  });
+
+
+
+
+   
