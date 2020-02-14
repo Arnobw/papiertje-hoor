@@ -246,7 +246,7 @@ let randitem = function () {
     });*/
     
    
-    $('#foto').css("background-image", "url('img/' + "gekozen.foto + ")") .effect( "bounce", {times:3}, 300 );
+    $('#foto').css("background-image", "url(" + 'img/' + gekozen.foto + ")") .effect( "bounce", {times:3}, 300 );
     $('#foto').css("opacity", "1");
     
    
