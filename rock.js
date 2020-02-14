@@ -137,7 +137,7 @@ $('#btn').click(function () {
         $('#output').animate({
             opacity: 0
         }, 50, function () {
-            $(this).text(prefix + a[r] + ". Jullie staan gelijk.>")
+            $(this).text("<Gelijkspel.>")
                 .animate({
                     opacity: 1
                 });
