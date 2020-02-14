@@ -89,7 +89,7 @@ $('#btn').click(function () {
         $('#foto').animate({
             opacity: 0
         }, 50, function () {
-            $(this).css('background-image', "url('win.jpg')")
+            $(this).css('background-image', "url('img/win.jpg')")
                 .animate({
                     opacity: 1
                 });
@@ -123,7 +123,7 @@ $('#btn').click(function () {
         $('#foto').animate({
             opacity: 0
         }, 50, function () {
-            $(this).css('background-image', "url('draw.jpg')")
+            $(this).css('background-image', "url('img/draw.jpg')")
                 .animate({
                     opacity: 1
                 });
@@ -144,7 +144,7 @@ $('#btn').click(function () {
         $('#foto').animate({
             opacity: 0
         }, 50, function () {
-            $(this).css('background-image', "url('lose.jpg')")
+            $(this).css('background-image', "url('img/lose.jpg')")
                 .animate({
                     opacity: 1
                 });
@@ -246,7 +246,7 @@ let randitem = function () {
     });*/
     
    
-    $('#foto').css("background-image", "url(" + gekozen.foto + ")") .effect( "bounce", {times:3}, 300 );
+    $('#foto').css("background-image", "url('img/' + "gekozen.foto + ")") .effect( "bounce", {times:3}, 300 );
     $('#foto').css("opacity", "1");
     
    
