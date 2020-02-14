@@ -85,6 +85,9 @@ $('#btn').click(function () {
                 .animate({
                     opacity: 1
                 });
+                $('#computer').css('background-image',"url('img/revenantLow.png')");
+                $('#player').css('background-image',"url('img/player.png')");
+
         })
         $('#foto').animate({
             opacity: 0
@@ -107,6 +110,7 @@ $('#btn').click(function () {
                 }).animate({
                     opacity: 0
                 });
+                $("#computer").effect( "bounce", {times:3}, 300 );
         });
     }
 
@@ -140,6 +144,9 @@ $('#btn').click(function () {
                 .animate({
                     opacity: 1
                 });
+                $('#player').css('background-image', "url('img/playerLow.png')");
+                $('#computer').css('background-image',"url('img/revenant.png')");
+              
         })
         $('#foto').animate({
             opacity: 0
@@ -160,6 +167,7 @@ $('#btn').click(function () {
                 }).animate({
                     opacity: 0
                 });
+                $("#player").effect( "bounce", {times:3}, 300 );
         });
     }
 
@@ -255,43 +263,16 @@ let randitem = function () {
    //score animatie
 
    
-/*    computerwin += gekozen.infoPC;
+   computerwin += gekozen.infoPC;
    $('#pc').text("pc score: " + computerwin);
-   $('#scorepc').stop(true).animate({
-        opacity: 0
-    }, 50, function () {
-        $('#scorepc').text(gekozen.infoPC)
-            .animate({
-                opacity: 1
-            }).animate({
-                opacity: 0
-            });
-    }); */
+  
     
-    menswin += gekozen.info;
+   menswin += gekozen.info;
     $('#mens').text("jouw score: " + menswin );  
-    $('#scoreman').stop(true).animate({
-        opacity: 0
-    }, 50, function () {
-        $('#scoreman').text(gekozen.info)
-            .animate({
-                opacity: 1
-            }).animate({
-                opacity: 0
-            });
-    });  
+   
 
     
-
 }
-
-$(document).ready(function() {
-
-    $("#btn").click(function(){
-       $("#scores").effect( "bounce", {times:3}, 300 );
-    });
-
- });
 
 
 
