@@ -1,42 +1,67 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Staar Peen Schapier</title>
-    <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    
+
 
 </head>
+
 <body>
     <div id="container">
-  <section><div id="scores"> <p id="mens"> pc score: 0</p> <div id="scoremens"></div>
-    <p id="pc">jouw score: 0</p><div id="scorepc"> </div></div> </section> 
-   
+        <section>
+            <div id="scores">
 
- <div id="output">Een harde strijd tussen man en machine.</div>
-    <div id="foto"></div>
-    <select id="input" name="keuze">
-        <option value="schaar">schaar</option>
-        <option value="steen">steen</option>
-        <option value="papier">papier</option>
-    </select>
- <button id="btn"><span>speel</span></button>
 
+                <div class="scoreWrapper">
+                    <p id="mens"> jouw score: 0</p>
+                    <div id="scoreman">
+                        
+                    </div>
+                    <img id="player"></img>
+                </div>
 
 
 
-    
-    <script src="https://code.jquery.com/jquery-3.3.1.js"
-    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-    crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.core.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
-			  integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
-			  crossorigin="anonymous"></script>
-    <script src="rock.js"></script>
+                <div class="fotoWrapper">
+                    <div id="output">Een harde strijd tussen man en machine.</div>
+                    <div id="foto"></div>
+                    <div class="buttonWrapper">
+                    <select id="input" name="keuze">
+                        <option value="schaar">schaar</option>
+                        <option value="steen">steen</option>
+                        <option value="papier">papier</option>
+                    </select>
+                    <button id="btn"><span>speel</span></button>
+                </div>
+                </div>
+            
+
+
+                <div class="scoreWrapper">
+                <p id="pc">pc score: 0</p>
+                <div id="scorepc">
+                
+                </div>
+                <img id="computer"></img>
+                </div>
+            </div>
+        </section>
+
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.core.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+            integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+        <script src="rock.js"></script>
 </body>
+
 </html>

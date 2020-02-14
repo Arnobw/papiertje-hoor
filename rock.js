@@ -44,7 +44,7 @@ var draww = new Howl({
 
 var revent = new Howl({
     src: ['audio/random.wav'],
-    volume: 1
+    volume: 0.7
 });
 
 //
@@ -255,7 +255,7 @@ let randitem = function () {
    //score animatie
 
    
-   computerwin += gekozen.infoPC;
+/*    computerwin += gekozen.infoPC;
    $('#pc').text("pc score: " + computerwin);
    $('#scorepc').stop(true).animate({
         opacity: 0
@@ -266,7 +266,7 @@ let randitem = function () {
             }).animate({
                 opacity: 0
             });
-    });
+    }); */
     
     menswin += gekozen.info;
     $('#mens').text("jouw score: " + menswin );  
@@ -284,14 +284,6 @@ let randitem = function () {
     
 
 }
-
-// $('#btn').click(function () {
-//     let rr = Math.floor(Math.random() * 10);
-//     console.log(rr);
-//     if (rr == 5) {
-//         randitem();
-//     }
-// })
 
 $(document).ready(function() {
 
