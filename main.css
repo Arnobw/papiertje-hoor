@@ -142,11 +142,15 @@ outline:dashed 1px Chartreuse ;
 
 
 
-.buttonwrapper {
+.buttonWrapper {
     width:100%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: stretch;
     align-items: center;
     margin-top: 50px;
+}
+
+select, button {
+    width:48%;
 }
