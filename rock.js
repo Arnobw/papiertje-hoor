@@ -100,6 +100,7 @@ $('#btn').click(function () {
 
 
         menswin += 1;
+
         $('#mens').text("jouw score: " + menswin)
         $('#scoreman').animate({
             opacity: 0
@@ -112,6 +113,23 @@ $('#btn').click(function () {
                 });
                 $("#computer").effect( "bounce", {times:3}, 300 );
         });
+
+        s
+        computerwin -=1;
+
+
+        $('#computer').text("pc score :" + computerwin);
+        $('#scorepc').animate({
+            opacity: 0
+        }, 50, function () {
+            $(this).text("+1")
+                .animate({
+                    opacity: 1
+                }).animate({
+                    opacity: 0
+                }); });
+
+
     }
 
     let draw = function () {
@@ -132,6 +150,9 @@ $('#btn').click(function () {
                     opacity: 1
                 });
         })
+
+        $('#computer').css('background-image',"url('img/revenantLow.png')");
+        $('#player').css('background-image',"url('img/playerLow.png')");
     }
 
     let loss = function () {
@@ -157,6 +178,7 @@ $('#btn').click(function () {
                 });
         })
         computerwin += 1;
+
         $('#pc').text("pc score :" + computerwin);
         $('#scorepc').animate({
             opacity: 0
@@ -167,8 +189,20 @@ $('#btn').click(function () {
                 }).animate({
                     opacity: 0
                 });
+
+
+        menswin -=1;
+       
+        $('#mens').text("pc score :" + menswin);
+       
+
+                
+
+                
                 $("#player").effect( "bounce", {times:3}, 300 );
         });
+
+        
     }
 
 
@@ -202,13 +236,7 @@ $('#btn').click(function () {
             draw();
         }
     }
-
-
-    }
-
-    
-
-
+}
 });
 
 
@@ -237,6 +265,13 @@ let randitem = function () {
     revent.play();
   let rrr = Math.floor(Math.random()* items.length);
   let gekozen = items[rrr];
+  
+  computerwin += gekozen.infoPC;
+  menswin += gekozen.info;
+
+$('#pc').text("pc score: " + computerwin);
+$('#mens').text("jouw score: " + menswin );  
+
   console.log(gekozen)
     $('#output').animate({
         opacity: 0
@@ -247,32 +282,46 @@ let randitem = function () {
             });
     });
 
-   /* $('#foto').animate({
+
+
+
+     //score animatie
+     $('#scorepc').animate({
         opacity: 0
     }, 50, function () {
-       .effect( "bounce", {times:3}, 300 );
-    });*/
+        $(this).text(gekozen.infoPC)
+            .animate({
+                opacity: 1
+            }).animate({
+                opacity: 0
+            })
+    });
+
+    $('#scoreman').animate({
+        opacity: 0
+    }, 50, function () {
+        $(this).text(gekozen.info)
+            .animate({
+                opacity: 1
+            }).animate({
+                opacity: 0
+            })
+    });   
+
     
    
     $('#foto').css("background-image", "url(" + 'img/' + gekozen.foto + ")") .effect( "bounce", {times:3}, 300 );
     $('#foto').css("opacity", "1");
     
-   
-  // $('#foto')
-   
-   //score animatie
+
 
    
-   computerwin += gekozen.infoPC;
-   $('#pc').text("pc score: " + computerwin);
-  
-    
-   menswin += gekozen.info;
-    $('#mens').text("jouw score: " + menswin );  
-   
+
+    $('#computer').css('background-image',"url('img/revenantLow.png')");
+    $('#player').css('background-image',"url('img/playerLow.png')");
 
     
-}
+};
 
 
 

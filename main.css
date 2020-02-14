@@ -18,7 +18,7 @@ section {
     display: flex;
     flex-direction: row;
     align-content:space-between;
-    background-color:black;
+    
     color:Chartreuse ;
     width: 100%;
    
@@ -110,6 +110,8 @@ outline:dashed 1px Chartreuse ;
     height:300px;
     background-size:cover;
     position: absolute;
+    z-index: -1;
+    outline:dashed 2px Chartreuse ;
 }
 
 #computer {
@@ -118,11 +120,14 @@ outline:dashed 1px Chartreuse ;
     height:300px;
     background-size:cover;
     position: absolute;
+    z-index: -1;
+    outline:dashed 2px Chartreuse ;
 }
 
 #mens {
     display: flex;
     flex-direction: column;
+    
 }
 
 
