@@ -18,7 +18,7 @@ var wonnered = new Howl({
 
 var klik = new Howl({
     src: ['audio/klik.wav'],
-    volume: 0.2
+    volume: 0.4
 });
 
 var verlies = new Howl({
@@ -32,7 +32,7 @@ var verlies = new Howl({
 
 var draww = new Howl({
     src: ['audio/draw.wav'],
-    volume: 1
+    volume: 0.4
 });
 
 var revent = new Howl({
