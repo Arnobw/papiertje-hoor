@@ -6,6 +6,7 @@ console.log("\\____()< awooooo");
 $( document ).ready(function() {
     console.log( "Ready!" );
     $('#container').hide();
+    $( "#restartBattle" ).hide();
 });
 
 
@@ -289,7 +290,7 @@ $('.speelknop').click(function (e) {
         })
         computerwin += 1;
 
-        $('#pc').text("HP:" + computerwin);
+        $('#pc').text("HP: " + computerwin);
         $('#scorepc').animate({
             opacity: 0
         }, 50, function () {
@@ -461,7 +462,9 @@ function checkWin(){
         $('#output').text("You both suck!");
         $('#computer').toggle( "explode" );
         $('#player').toggle( "explode" );
-        console.log('Both players lost. Shame.')
+        console.log('Both players lost. Shame.');
+        $( "#restartBattle" ).slideDown();
+        $('#foto').css('background-image',"url('img/draw.gif')");
 
     }
 
@@ -470,7 +473,9 @@ function checkWin(){
         death.play();
         $('#output').text("You're winner!!!");
         $('.buttonWrapper').hide();
-        console.log('The computer somehow lost.')
+        console.log('The computer somehow lost.');
+        $( "#restartBattle" ).slideDown();
+        $('#foto').css('background-image',"url('img/player_wins.gif')");
     }
     
     
@@ -479,14 +484,28 @@ function checkWin(){
         death.play();
         $('#output').text("You're losered!!!");
         $('.buttonWrapper').hide();
-        console.log('The player obviously lost.')
+        console.log('The player obviously lost.');
+        $( "#restartBattle" ).slideDown();
+        $('#foto').css('background-image',"url('img/revenant_wins.gif')");
     } 
     else {
         console.log('no winner yet.....')
     }
-
-
-  
-   
- 
 }
+
+function restart(){
+    $('#player').slideDown();
+    $('#computer').slideDown();
+    $('.buttonWrapper').slideDown();
+    menswin = 30;
+    computerwin = 30;
+    drawCount = 0;
+    $('#mens').text( "HP: " + menswin);
+    $('#pc').text("HP: " + computerwin);
+    $( "#restartBattle" ).slideUp();
+
+}
+
+$( "#restartBattle" ).click(function() {
+    restart();
+  });

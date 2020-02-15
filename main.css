@@ -50,6 +50,10 @@ outline:dashed 1px Chartreuse ;
   
 }
 
+#startBattle {
+    top:50%;
+}
+
 #input {
     background-color:black;
     height: 80px;
@@ -91,9 +95,14 @@ outline:dashed 1px Chartreuse ;
     text-align:left;
     font-size:70px;
     padding: 10px;
-
+   
     margin:auto 0;
   
+}
+
+.fire {
+    background-image: url('img/fire.gif');
+    background-repeat: repeat-x;
 }
 
 
