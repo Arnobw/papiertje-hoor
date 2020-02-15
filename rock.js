@@ -58,8 +58,8 @@ var damage = new Howl({
 //
 
 let a = ["schaar", "steen", "papier"];
-let computerwin = 0;
-let menswin = 0;
+let computerwin = 10;
+let menswin = 10;
 let prefix = "<De computer koos ";
 
 
@@ -70,7 +70,7 @@ let prefix = "<De computer koos ";
 
 
 $('.speelknop').click(function (e) {
-
+    checkWin();
     klik.play();
     
     b =  e.target.id;
@@ -121,22 +121,15 @@ $('.speelknop').click(function (e) {
                     opacity: 0
                 });
                 $("#computer").effect( "bounce", {times:3}, 300 );
+                
+     
         });
 
-        s
+        
         computerwin -=1;
 
 
-        $('#computer').text("pc score :" + computerwin);
-        $('#scorepc').animate({
-            opacity: 0
-        }, 50, function () {
-            $(this).text("+1")
-                .animate({
-                    opacity: 1
-                }).animate({
-                    opacity: 0
-                }); });
+
 
 
     }
@@ -337,3 +330,29 @@ $('#mens').text("jouw score: " + menswin );
 
 
 
+
+
+function checkWin(){
+    if(computerwin <0){
+        $('#computer').toggle( "explode" );
+        $('#output').text("You're winner!!!");
+        $('.buttonWrapper').hide();
+    }
+    
+    
+  else if(menswin <0){
+        $('#player').toggle( "explode" );
+        $('#output').text("You're losered!!!");
+        $('.buttonWrapper').hide();
+    }
+
+    else if (computerwin && menswin <0){
+        $('.buttonWrapper').hide();
+        $('#output').text("You both suck!");
+
+    }
+    else {
+        console.log('No winner yet.......')
+    }
+ 
+}
