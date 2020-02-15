@@ -5,6 +5,19 @@ console.log("\\____()< awooooo");
 
 
 //geluiden
+
+
+var backgroundMusic = new Howl({
+    src: ['audio/dungeon_spooky.wav'],
+    autoplay: true,
+    loop: true,
+    volume: 0.4,
+    onend: function() {
+      console.log('Finished!');
+    }
+  });
+
+
 var wonnered = new Howl({
     src: ['audio/win.wav'],
     volume: 0.5
@@ -89,7 +102,7 @@ $('.speelknop').click(function (e) {
 
     //winnen, verliezen, gelijkspel....
     let win = function () {
-      
+        drawCount = 0;
         wonnered.play();
         // wonnered2.play();
         damage_right.play();
@@ -233,7 +246,7 @@ $('.speelknop').click(function (e) {
 
     //Begin Loss Function
     let loss = function () {
-      
+        drawCount = 0;
         verlies.play();
         // verlies2.play();
         damage_left.play();
@@ -354,7 +367,7 @@ let items = [tankje, inktvis, yeeten, computerman, dio];
 // randomitem
 
 let randitem = function () {
-    $('#output').addClass(".rood");
+    drawCount= 0;
     revent.play();
   let rrr = Math.floor(Math.random()* items.length);
   let gekozen = items[rrr];
@@ -424,7 +437,7 @@ $('#mens').text("HP: " + menswin );
 function checkWin(){
     console.log ('checking');
     
-    if (computerwin && menswin <=0){
+    if (computerwin <=0 && menswin <=0){
         death.play();
         $('.buttonWrapper').hide();
         $('#output').text("You both suck!");
