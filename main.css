@@ -91,7 +91,7 @@ outline:dashed 1px Chartreuse ;
     text-align:left;
     font-size:70px;
     padding: 10px;
-   
+
     margin:auto 0;
   
 }
@@ -102,6 +102,7 @@ outline:dashed 1px Chartreuse ;
     align-content: space-between;
     width: 100%;
     padding: 0 30px;
+    
 }
 
 
@@ -140,6 +141,7 @@ outline:dashed 1px Chartreuse ;
 #mens {
     display: flex;
     flex-direction: column;
+    background:black;
     
 }
 
@@ -147,6 +149,7 @@ outline:dashed 1px Chartreuse ;
 #pc {
     display: flex;
     flex-direction: column;
+    background:black;
 
 }
 

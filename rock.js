@@ -32,7 +32,7 @@ var verlies = new Howl({
 
 var draww = new Howl({
     src: ['audio/draw.wav'],
-    volume: 0.4
+    volume: 0.3
 });
 
 var revent = new Howl({
@@ -61,7 +61,7 @@ let a = ["schaar", "steen", "papier"];
 let computerwin = 10;
 let menswin = 10;
 let prefix = "<De computer koos ";
-
+let drawCount = 0;
 
 
 
@@ -70,7 +70,7 @@ let prefix = "<De computer koos ";
 
 
 $('.speelknop').click(function (e) {
-    checkWin();
+    
     klik.play();
     
     b =  e.target.id;
@@ -84,6 +84,7 @@ $('.speelknop').click(function (e) {
 
     //winnen, verliezen, gelijkspel....
     let win = function () {
+        checkWin();
         wonnered.play();
         // wonnered2.play();
         damage_right.play();
@@ -110,7 +111,7 @@ $('.speelknop').click(function (e) {
 
         menswin += 1;
 
-        $('#mens').text("jouw score: " + menswin)
+        $('#mens').text("HP: " + menswin)
         $('#scoreman').animate({
             opacity: 0
         }, 50, function () {
@@ -127,16 +128,35 @@ $('.speelknop').click(function (e) {
 
         
         computerwin -=1;
+        $('#pc').text("HP: " + computerwin)
+        $('#scorepc').animate({
+            opacity: 0
+        }, 50, function () {
+            $(this).text("-1")
+                .animate({
+                    opacity: 1
+                }).animate({
+                    opacity: 0
+                });
+         
+                
+     
+        });
 
 
 
 
-
+   
     }
 
+
+    // Begin Draw Function
     let draw = function () {
+        checkWin();
         draww.play();
         damage.play();
+        drawCount++;
+    
         $('#output').animate({
             opacity: 0
         }, 50, function () {
@@ -152,13 +172,63 @@ $('.speelknop').click(function (e) {
                 .animate({
                     opacity: 1
                 });
+
+
+                computerwin -= drawCount;
+                $('#pc').text("HP: " + computerwin)
+                $('#scorepc').animate({
+                    opacity: 0
+                }, 50, function () {
+                    $(this).text("-" + drawCount)
+                        .animate({
+                            opacity: 1
+                        }).animate({
+                            opacity: 0
+                        });
+                        $("#player").effect( "bounce", {times:3}, 300 );
+                        
+             
+                });
+
+
+                menswin -= drawCount;
+                $('#mens').text("HP: " + menswin)
+                $('#scoreman').animate({
+                    opacity: 0
+                }, 50, function () {
+                    $(this).text("-" + drawCount)
+                        .animate({
+                            opacity: 1
+                        }).animate({
+                            opacity: 0
+                        });
+                        $("#computer").effect( "bounce", {times:3}, 300 );
+                        
+             
+                });
         })
+
+        
+
+ 
+
+
+                
+
 
         $('#computer').css('background-image',"url('img/revenantLow.png')");
         $('#player').css('background-image',"url('img/playerLow.png')");
+
+    
+        
     }
 
+    // Einde Draw Function
+
+
+    //Begin Loss Function
     let loss = function () {
+        checkWin();  
         verlies.play();
         // verlies2.play();
         damage_left.play();
@@ -183,7 +253,7 @@ $('.speelknop').click(function (e) {
         })
         computerwin += 1;
 
-        $('#pc').text("pc score :" + computerwin);
+        $('#pc').text("HP:" + computerwin);
         $('#scorepc').animate({
             opacity: 0
         }, 50, function () {
@@ -196,8 +266,20 @@ $('.speelknop').click(function (e) {
 
 
         menswin -=1;
-       
-        $('#mens').text("pc score :" + menswin);
+        $('#mens').text("HP: " + menswin)
+        $('#scoreman').animate({
+            opacity: 0
+        }, 50, function () {
+            $(this).text("-1")
+                .animate({
+                    opacity: 1
+                }).animate({
+                    opacity: 0
+                });
+         
+                
+     
+        });
        
 
                 
@@ -208,6 +290,8 @@ $('.speelknop').click(function (e) {
 
         
     }
+    //Einde Loss Function
+
 
 
 
@@ -273,8 +357,8 @@ let randitem = function () {
   computerwin += gekozen.infoPC;
   menswin += gekozen.info;
 
-$('#pc').text("pc score: " + computerwin);
-$('#mens').text("jouw score: " + menswin );  
+$('#pc').text("HP: " + computerwin);
+$('#mens').text("HP: " + menswin );  
 
   console.log(gekozen)
     $('#output').animate({
@@ -333,26 +417,25 @@ $('#mens').text("jouw score: " + menswin );
 
 
 function checkWin(){
-    if(computerwin <0){
+    if(computerwin <=0){
         $('#computer').toggle( "explode" );
         $('#output').text("You're winner!!!");
         $('.buttonWrapper').hide();
-    }
+    };
     
     
-  else if(menswin <0){
+  if(menswin <=0){
         $('#player').toggle( "explode" );
         $('#output').text("You're losered!!!");
         $('.buttonWrapper').hide();
-    }
+    };
 
-    else if (computerwin && menswin <0){
+    if (computerwin && menswin <=0){
         $('.buttonWrapper').hide();
         $('#output').text("You both suck!");
 
-    }
-    else {
-        console.log('No winner yet.......')
-    }
+    };
+  
+   
  
 }
