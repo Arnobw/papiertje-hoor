@@ -55,6 +55,11 @@ var damage = new Howl({
     volume: 0.4
 });
 
+var death = new Howl({
+    src: ['audio/death.wav'],
+    volume: 0.4
+});
+
 //
 
 let a = ["schaar", "steen", "papier"];
@@ -418,24 +423,35 @@ $('#mens').text("HP: " + menswin );
 
 function checkWin(){
     console.log ('checking');
-    if(computerwin <=0){
-        $('#computer').toggle( "explode" );
-        $('#output').text("You're winner!!!");
-        $('.buttonWrapper').hide();
-    };
     
-    
-  if(menswin <=0){
-        $('#player').toggle( "explode" );
-        $('#output').text("You're losered!!!");
-        $('.buttonWrapper').hide();
-    };
-
     if (computerwin && menswin <=0){
+        death.play();
         $('.buttonWrapper').hide();
         $('#output').text("You both suck!");
+        $('#computer').toggle( "explode" );
+        $('#player').toggle( "explode" );
 
-    };
+    }
+
+  else if(computerwin <=0){
+        $('#computer').toggle( "explode" );
+        death.play();
+        $('#output').text("You're winner!!!");
+        $('.buttonWrapper').hide();
+    }
+    
+    
+  else if(menswin <=0){
+        $('#player').toggle( "explode" );
+        death.play();
+        $('#output').text("You're losered!!!");
+        $('.buttonWrapper').hide();
+    } 
+    else {
+        console.log('no winner yet.....')
+    }
+
+
   
    
  
