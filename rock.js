@@ -84,7 +84,7 @@ $('.speelknop').click(function (e) {
 
     //winnen, verliezen, gelijkspel....
     let win = function () {
-        checkWin();
+      
         wonnered.play();
         // wonnered2.play();
         damage_right.play();
@@ -146,13 +146,13 @@ $('.speelknop').click(function (e) {
 
 
 
-   
+        setTimeout(function() {   checkWin();  ; },700); 
     }
 
 
     // Begin Draw Function
     let draw = function () {
-        checkWin();
+       
         draww.play();
         damage.play();
         drawCount++;
@@ -220,7 +220,7 @@ $('.speelknop').click(function (e) {
         $('#player').css('background-image',"url('img/playerLow.png')");
 
     
-        
+        setTimeout(function() {   checkWin();  ; },700);    
     }
 
     // Einde Draw Function
@@ -228,7 +228,7 @@ $('.speelknop').click(function (e) {
 
     //Begin Loss Function
     let loss = function () {
-        checkWin();  
+      
         verlies.play();
         // verlies2.play();
         damage_left.play();
@@ -288,7 +288,7 @@ $('.speelknop').click(function (e) {
                 $("#player").effect( "bounce", {times:3}, 300 );
         });
 
-        
+        setTimeout(function() {   checkWin();  ; },700);  
     }
     //Einde Loss Function
 
@@ -408,7 +408,7 @@ $('#mens').text("HP: " + menswin );
     $('#computer').css('background-image',"url('img/revenantLow.png')");
     $('#player').css('background-image',"url('img/playerLow.png')");
 
-    
+    setTimeout(function() {   checkWin();  ; }, 700); 
 };
 
 
@@ -417,6 +417,7 @@ $('#mens').text("HP: " + menswin );
 
 
 function checkWin(){
+    console.log ('checking');
     if(computerwin <=0){
         $('#computer').toggle( "explode" );
         $('#output').text("You're winner!!!");
