@@ -8,7 +8,7 @@ console.log("\\____()< awooooo");
 
 
 var backgroundMusic = new Howl({
-    src: ['audio/dungeon_spooky.wav'],
+    src: ['audio/dungeon_spooky.mp3'],
     autoplay: true,
     loop: true,
     volume: 0.4,
