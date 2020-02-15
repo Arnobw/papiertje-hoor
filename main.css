@@ -1,13 +1,14 @@
 body {
     font-family: 'Press Start 2P', cursive;
-    background-color: black;
+    /* background-color: black; */
+    background-image:url('img/wall_bg.jpg');
 }
 
 #container {
     display:flex;
     flex-direction: column;
     width: 100%;
- 
+    margin-top:100px;
     margin:0 auto;
    
 
@@ -36,7 +37,7 @@ width: 50%;
 outline:dashed 1px Chartreuse ;
 }
 
-#btn {
+.speelknop {
     background-color:black;
     height: 80px;
     font-size:20px;
@@ -117,6 +118,9 @@ outline:dashed 1px Chartreuse ;
   
     z-index: -1;
     outline:solid 1px Chartreuse ;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
 #computer {
@@ -128,6 +132,9 @@ outline:dashed 1px Chartreuse ;
 
     z-index: -1;
     outline:solid 1px Chartreuse ;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
 #mens {

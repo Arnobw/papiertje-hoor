@@ -1,10 +1,3 @@
-$(document).ready(function() {
-    $("#input, #btn").hide();
-});
-
-$( document ).keypress(function() {
-    $("#input, #btn").slideDown()
-  });
 console.log("\\____()< awooooo");
 
 
@@ -17,10 +10,10 @@ var wonnered = new Howl({
     volume: 0.5
 });
 
-var wonnered2 = new Howl({
-    src: ['audio/win2.wav'],
-    volume: 0.5
-});
+// var wonnered2 = new Howl({
+//     src: ['audio/win2.wav'],
+//     volume: 0.5
+// });
 
 
 var klik = new Howl({
@@ -32,10 +25,10 @@ var verlies = new Howl({
     src: ['audio/verlies.wav'],
     volume: 0.2
 });
-var verlies2 = new Howl({
-    src: ['audio/verlies2.wav'],
-    volume: 0.4
-});
+// var verlies2 = new Howl({
+//     src: ['audio/verlies2.wav'],
+//     volume: 0.4
+// });
 
 var draww = new Howl({
     src: ['audio/draw.wav'],
@@ -44,7 +37,22 @@ var draww = new Howl({
 
 var revent = new Howl({
     src: ['audio/random.wav'],
-    volume: 0.7
+    volume: 0.4
+});
+
+var damage_right = new Howl({
+    src: ['audio/damage_right.wav'],
+    volume: 0.4
+});
+
+var damage_left = new Howl({
+    src: ['audio/damage_left.wav'],
+    volume: 0.4
+});
+
+var damage = new Howl({
+    src: ['audio/damage.wav'],
+    volume: 0.4
 });
 
 //
@@ -61,12 +69,12 @@ let prefix = "<De computer koos ";
 
 
 
-$('#btn').click(function () {
+$('.speelknop').click(function (e) {
 
     klik.play();
     
-    b = $('#input').val();
-
+    b =  e.target.id;
+    console.log(b);
 
     let rr = Math.floor(Math.random() * 10);
     console.log(rr);
@@ -77,7 +85,8 @@ $('#btn').click(function () {
     //winnen, verliezen, gelijkspel....
     let win = function () {
         wonnered.play();
-        wonnered2.play();
+        // wonnered2.play();
+        damage_right.play();
         $('#output').animate({
             opacity: 0
         }, 50, function () {
@@ -134,6 +143,7 @@ $('#btn').click(function () {
 
     let draw = function () {
         draww.play();
+        damage.play();
         $('#output').animate({
             opacity: 0
         }, 50, function () {
@@ -157,7 +167,8 @@ $('#btn').click(function () {
 
     let loss = function () {
         verlies.play();
-        verlies2.play();
+        // verlies2.play();
+        damage_left.play();
         $('#output').animate({
             opacity: 0
         }, 50, function () {
@@ -326,4 +337,3 @@ $('#mens').text("jouw score: " + menswin );
 
 
 
-   
