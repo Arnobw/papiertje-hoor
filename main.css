@@ -37,7 +37,7 @@ width: 50%;
 outline:dashed 1px Chartreuse ;
 }
 
-.speelknop {
+.speelknop, #startBattle {
     background-color:black;
     height: 80px;
     font-size:20px;
@@ -174,4 +174,13 @@ outline:dashed 1px Chartreuse ;
 
 select, button {
     width:48%;
+}
+
+
+#landingPage{
+    width: 100%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -3,13 +3,31 @@ console.log("\\____()< awooooo");
 
 
 
+$( document ).ready(function() {
+    console.log( "Ready!" );
+    $('#container').hide();
+});
+
+
+
+
+$('#startBattle').click(function(){
+
+    backgroundMusic.play();
+    $('#startBattle').hide();
+    $('#container').slideDown();
+});
+
+
+
+
 
 //geluiden
 
 
 var backgroundMusic = new Howl({
     src: ['audio/dungeon_spooky.mp3'],
-    autoplay: true,
+
     loop: true,
     volume: 0.4,
     onend: function() {
@@ -76,8 +94,8 @@ var death = new Howl({
 //
 
 let a = ["schaar", "steen", "papier"];
-let computerwin = 10;
-let menswin = 10;
+let computerwin = 30;
+let menswin = 30;
 let prefix = "<De computer koos ";
 let drawCount = 0;
 
@@ -88,7 +106,7 @@ let drawCount = 0;
 
 
 $('.speelknop').click(function (e) {
-    
+
     klik.play();
     
     b =  e.target.id;
@@ -443,6 +461,7 @@ function checkWin(){
         $('#output').text("You both suck!");
         $('#computer').toggle( "explode" );
         $('#player').toggle( "explode" );
+        console.log('Both players lost. Shame.')
 
     }
 
@@ -451,6 +470,7 @@ function checkWin(){
         death.play();
         $('#output').text("You're winner!!!");
         $('.buttonWrapper').hide();
+        console.log('The computer somehow lost.')
     }
     
     
@@ -459,6 +479,7 @@ function checkWin(){
         death.play();
         $('#output').text("You're losered!!!");
         $('.buttonWrapper').hide();
+        console.log('The player obviously lost.')
     } 
     else {
         console.log('no winner yet.....')
