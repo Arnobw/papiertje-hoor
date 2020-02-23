@@ -17,6 +17,7 @@ $('#startBattle').click(function(){
     backgroundMusic.play();
     $('#startBattle').hide();
     $('#container').slideDown();
+    $('#nameEntry').hide();
    
 });
 
@@ -100,7 +101,7 @@ let computerwin = 30;
 let menswin = 30;
 let prefix = "<Rival chose ";
 let drawCount = 0;
-
+let playerName;
 
 
 
@@ -110,9 +111,12 @@ let drawCount = 0;
 $('.speelknop').click(function (e) {
 
     klik.play();
-    
+    playerName = $('#nameEntry').val();
+    $('#playerName').text(playerName);
+
     b =  e.target.id;
     console.log(b);
+    
 
     let rr = Math.floor(Math.random() * 10);
     console.log(rr);
@@ -129,7 +133,7 @@ $('.speelknop').click(function (e) {
         $('#output').animate({
             opacity: 0
         }, 50, function () {
-            $(this).text(prefix + a[r] + ". You won!>")
+            $(this).text(prefix + a[r] + "." + "\n" + playerName + " won!>")
                 .animate({
                     opacity: 1
                 });
@@ -273,7 +277,7 @@ $('.speelknop').click(function (e) {
         $('#output').animate({
             opacity: 0
         }, 50, function () {
-            $(this).text(prefix + a[r] + ". You lose.>")
+            $(this).text(prefix + a[r] + "." + "\n" + playerName + " loses.>")
                 .animate({
                     opacity: 1
                 });
@@ -487,7 +491,7 @@ function checkWin(){
         $('.buttonWrapper').hide();
         console.log('The player obviously lost.');
         $( "#restartBattle" ).slideDown();
-        $('#foto').css('background-image',"url('img/anti_gamer_wins.gif')");
+        $('#foto').css('background-image',"url('img/revenant_wins.gif')");
     } 
     else {
         console.log('no winner yet.....')
