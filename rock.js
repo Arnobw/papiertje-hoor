@@ -17,6 +17,7 @@ $('#startBattle').click(function(){
     backgroundMusic.play();
     $('#startBattle').hide();
     $('#container').slideDown();
+   
 });
 
 
