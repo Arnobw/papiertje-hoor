@@ -95,10 +95,10 @@ var death = new Howl({
 
 //
 
-let a = ["schaar", "steen", "papier"];
+let a = ["scissors", "rock", "paper"];
 let computerwin = 30;
 let menswin = 30;
-let prefix = "<De computer koos ";
+let prefix = "<Rival chose ";
 let drawCount = 0;
 
 
@@ -129,11 +129,11 @@ $('.speelknop').click(function (e) {
         $('#output').animate({
             opacity: 0
         }, 50, function () {
-            $(this).text(prefix + a[r] + ". Je hebt gewonnen! Episch!>")
+            $(this).text(prefix + a[r] + ". You won!>")
                 .animate({
                     opacity: 1
                 });
-                $('#computer').css('background-image',"url('img/revenantLow.png')");
+                $('#computer').css('background-image',"url('img/anti_gamerLow.png')");
                 $('#player').css('background-image',"url('img/player.png')");
 
         })
@@ -198,7 +198,7 @@ $('.speelknop').click(function (e) {
         $('#output').animate({
             opacity: 0
         }, 50, function () {
-            $(this).text("<Gelijkspel.>")
+            $(this).text("<Draw.>")
                 .animate({
                     opacity: 1
                 });
@@ -254,7 +254,7 @@ $('.speelknop').click(function (e) {
                 
 
 
-        $('#computer').css('background-image',"url('img/revenantLow.png')");
+        $('#computer').css('background-image',"url('img/anti_gamerLow.png')");
         $('#player').css('background-image',"url('img/playerLow.png')");
 
     
@@ -273,12 +273,12 @@ $('.speelknop').click(function (e) {
         $('#output').animate({
             opacity: 0
         }, 50, function () {
-            $(this).text(prefix + a[r] + ". Je verliest.>")
+            $(this).text(prefix + a[r] + ". You lose.>")
                 .animate({
                     opacity: 1
                 });
                 $('#player').css('background-image', "url('img/playerLow.png')");
-                $('#computer').css('background-image',"url('img/revenant.png')");
+                $('#computer').css('background-image',"url('img/anti_gamer.png')");
               
         })
         $('#foto').animate({
@@ -336,29 +336,29 @@ $('.speelknop').click(function (e) {
     let r = Math.floor(Math.random() * 3);
 
 
-    if (b === "schaar") {
-        if (a[r] === "schaar") {
+    if (b === "scissors") {
+        if (a[r] === "scissors") {
             draw();
 
-        } else if (a[r] === "steen") {
+        } else if (a[r] === "rock") {
             loss();
-        } else if (a[r] === "papier") {
+        } else if (a[r] === "paper") {
             win();
         }
-    } else if (b === "steen") {
-        if (a[r] === "schaar") {
+    } else if (b === "rock") {
+        if (a[r] === "scissors") {
             win();
-        } else if (a[r] === "steen") {
+        } else if (a[r] === "rock") {
             draw();
-        } else if (a[r] === "papier") {
+        } else if (a[r] === "paper") {
             loss();
         }
-    } else if (b === "papier") {
-        if (a[r] === "schaar") {
+    } else if (b === "paper") {
+        if (a[r] === "scissors") {
             loss();
-        } else if (a[r] === "steen") {
+        } else if (a[r] === "rock") {
             win();
-        } else if (a[r] === "papier") {
+        } else if (a[r] === "paper") {
             draw();
         }
     }
@@ -443,7 +443,7 @@ $('#mens').text("HP: " + menswin );
 
    
 
-    $('#computer').css('background-image',"url('img/revenantLow.png')");
+    $('#computer').css('background-image',"url('img/anti_gamerLow.png')");
     $('#player').css('background-image',"url('img/playerLow.png')");
 
     setTimeout(function() {   checkWin();  ; }, 700); 
@@ -487,7 +487,7 @@ function checkWin(){
         $('.buttonWrapper').hide();
         console.log('The player obviously lost.');
         $( "#restartBattle" ).slideDown();
-        $('#foto').css('background-image',"url('img/revenant_wins.gif')");
+        $('#foto').css('background-image',"url('img/anti_gamer_wins.gif')");
     } 
     else {
         console.log('no winner yet.....')

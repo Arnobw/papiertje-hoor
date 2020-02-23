@@ -192,4 +192,17 @@ select, button {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    background:black;
+    color: chartreuse;
+    width:30%;
+    margin:0 auto;
+    border:solid 2px chartreuse;
+    padding:20px;
+}
+
+#nameEntry {
+    padding:20px;
+    height:20px;
+    margin:40px;
 }
