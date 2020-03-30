@@ -380,11 +380,10 @@ function item(inaam, iinfoPC, iinfoo, ifoto, idesc) {
   }
 
 let tankje = new item ("tank", -5, -5, "tank.jpg", "<TANK BEATS EVERYTHING>");
-let inktvis = new item("inktvis", +10, +10, "inktvis.jpg", "<Inktvis op de parking, uuuhhhhhhh.>");
-let yeeten = new item ("PC uit het raam gooien", -3, 1, "raam.jpg", "<Je yeet gewoon die tyfus computer het raam uit.>")
-let computerman = new item("computerman", 1, -3, "computerman.jpg", "<De computer yeet gewoon jezelve het raam uit.>")
+let archvile = new item("Archvile", +1, -3, "archvile.png", "<The archvile shows up just to kick you in the nuts.>");
+let medic = new item ("Medic", +10, +10, "medic.png", "<You both get buffed by a medic passing by.>")
 let dio = new item('dio', -20, -20, "roller.jpg", "MUDA MUDA MUDAMUDAMUDAMUDAMUDAMUDA")
-let items = [tankje, inktvis, yeeten, computerman, dio];
+let items = [tankje, archvile, medic, dio];
 
 
 
