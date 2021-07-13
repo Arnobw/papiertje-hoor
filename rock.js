@@ -381,9 +381,12 @@ function item(inaam, iinfoPC, iinfoo, ifoto, idesc) {
 
 let tankje = new item ("tank", -5, -5, "tank.jpg", "<TANK BEATS EVERYTHING>");
 let archvile = new item("Archvile", +1, -3, "archvile.png", "<The archvile shows up just to kick you in the nuts.>");
-let medic = new item ("Medic", +10, +10, "medic.png", "<You both get buffed by a medic passing by.>")
-let dio = new item('dio', -20, -20, "roller.jpg", "MUDA MUDA MUDAMUDAMUDAMUDAMUDAMUDA")
-let items = [tankje, archvile, medic, dio];
+let medic = new item ("Medic", +10, +10, "medic.png", "<You both get buffed by a medic passing by.>");
+let dio = new item ('dio', -20, -20, "roller.jpg", "MUDA MUDA MUDAMUDAMUDAMUDAMUDAMUDA");
+let dunky = new item ('dunky', 0, +3, "dunky.png", "<Jerma gives you some dunky donut because your epic>");
+let sus = new item ('sus', -5, -5, "sus.jpg", "<wen imposer sus>");
+let drain = new item ('drain', +7, -7, "drain.gif", "<Your opponent used drain!>")
+let items = [tankje, archvile, medic, dio, dunky, sus, drain];
 
 
 
